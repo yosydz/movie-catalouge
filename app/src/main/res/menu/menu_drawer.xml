@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_bahasa"
+        android:title="@string/change_language" />
+    <item
+        android:id="@+id/nav_faq"
+        android:title="@string/faq" />
+    <item
+        android:id="@+id/nav_tac"
+        android:title="@string/tdc" />
+    <item
+        android:id="@+id/nav_contactus"
+        android:title="@string/call_me" />zz
+</menu>

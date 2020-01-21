@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Submission4</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="change_language">Pengaturan Bahasa</string>
+    <string name="faq">FAQ</string>
+    <string name="tdc">Syarat Dan Ketentuan</string>
+    <string name="call_me">Hubungi Kami</string>
+    <string name="user_name">Pengguna</string>
+    <string name="version">Versi %1$s</string>
+    <string name="error_unknow">Kesalahan tidak diketahui Kode %1$i</string>
+    <string name="reviewers">%1$s Ulasan</string>
+    <string name="title_movie">Film</string>
+    <string name="title_tv">Acara TV</string>
+    <string name="title_favorite">Disukai</string>
+    <string name="must_watch">Harus Ditonton</string>
+    <string name="popular">Populer</string>
+    <string name="recomendation">Rekomendasi</string>
+    <string name="more_view">lebih banyak</string>
+    <string name="show_less">lebih sedikit</string>
+    <string name="error_not_found">404 Data Tidak Ditemukan</string>
+    <string name="error_server_broken">500 Server Rusak</string>
+    <string name="error_network">Kegagalan jaringan, Silakan coba lagi nanti</string>
+    <string name="toast">Akan Datang</string>
+    <string name="search">Cari</string>
+    <string name="search_hint_movie">Masukan judul film</string>
+    <string name="search_hint_tv">Masukan judul acara TV</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

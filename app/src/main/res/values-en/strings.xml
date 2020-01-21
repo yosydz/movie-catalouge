@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Submission4 </string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="change_language">Language Setting</string>
+    <string name="faq">FAQ</string>
+    <string name="tdc">Terms and Conditions</string>
+    <string name="call_me">Contact us</string>
+    <string name="user_name">User</string>
+    <string name="error_unknow">Unknow Error Code %1$i</string>
+    <string name="version">Versi %1$s</string>
+    <string name="reviewers">%1$s Review</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="title_movie">Movie</string>
+    <string name="title_tv">TV shows</string>
+    <string name="must_watch">Must watch</string>
+    <string name="popular">Populer</string>
+    <string name="recomendation">Recommendation</string>
+    <string name="more_view">more view</string>
+    <string name="show_less">show less</string>
+    <string name="error_not_found">404 Data Not Found</string>
+    <string name="error_server_broken">500 Server Broken</string>
+    <string name="error_network">Network failure, Please try again later</string>
+    <string name="toast">Coming Soon</string>
+    <string name="tab_text_1">Movie</string>
+    <string name="tab_text_2">Tv</string>
+
+</resources>
