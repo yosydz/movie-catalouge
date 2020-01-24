@@ -65,6 +65,7 @@ public class FavoriteTvFragment extends Fragment implements LoadFavoritCallback 
         progressBar = view.findViewById(R.id.spin_kit);
         Sprite rotatingCircle = new WanderingCubes();
         progressBar.setIndeterminateDrawable(rotatingCircle);
+        progressBar.setVisibility(View.GONE);
 
         rvFavTv = view.findViewById(R.id.rv_tv);
         rvFavTv.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
@@ -78,6 +79,7 @@ public class FavoriteTvFragment extends Fragment implements LoadFavoritCallback 
             new LoadFavoriteTv(favoriteHelper, this).execute();
         } else {
             ArrayList<Favorite> list = savedInstanceState.getParcelableArrayList(EXTRA_TV);
+            favoriteArrayListTv = list;
             if (list != null) {
                 progressBar.setVisibility(View.GONE);
                 favoriteAdapter = new FavoriteTvAdapter(list, getContext());
@@ -87,6 +89,7 @@ public class FavoriteTvFragment extends Fragment implements LoadFavoritCallback 
                     startActivityForResult(intent, REQUEST_OKE);
                 });
                 rvFavTv.setAdapter(favoriteAdapter);
+                progressBar.setVisibility(View.GONE);
             }
         }
     }
@@ -99,7 +102,7 @@ public class FavoriteTvFragment extends Fragment implements LoadFavoritCallback 
 
     @Override
     public void preExecute() {
-        getActivity().runOnUiThread(() -> progressBar.setVisibility(View.VISIBLE));
+        getActivity().runOnUiThread(() -> progressBar.setVisibility(View.GONE));
     }
 
     @Override
@@ -147,6 +150,11 @@ public class FavoriteTvFragment extends Fragment implements LoadFavoritCallback 
             super.onPostExecute(favorites);
             weakCallback.get().postExecute(favorites);
         }
+    }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        favoriteHelper.close();
     }
 }

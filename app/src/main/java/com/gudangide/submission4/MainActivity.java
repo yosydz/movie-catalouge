@@ -1,12 +1,8 @@
 package com.gudangide.submission4;
 
-import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -16,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -50,9 +45,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //check fragment via instanceof
 
         if (activeFragment instanceof MovieFragment) {
-            toolbar.setTitle(getResources().getString(R.string.title_movie));
-        } else {
-            toolbar.setTitle(getResources().getString(R.string.title_tv));
+            toolbar.setTitle(getString(R.string.title_movie));
+        } else if (activeFragment instanceof TvFragment){
+            toolbar.setTitle(getString(R.string.title_tv));
+        }else {
+            toolbar.setTitle(getString(R.string.title_favorite));
         }
         if (savedInstanceState == null) {
             toolbar.setTitle(getResources().getString(R.string.title_movie));
@@ -128,6 +125,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()) {
             case R.id.nav_contactus:
             case R.id.nav_faq:
+                Intent setting = new Intent(this, SettingActivity.class);
+                startActivity(setting);
+                break;
             case R.id.nav_tac:
                 showToast();
                 break;

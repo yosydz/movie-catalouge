@@ -20,6 +20,7 @@ import androidx.appcompat.widget.SearchView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,6 +36,9 @@ import com.gudangide.submission4.models.pojo.TvShow;
 import com.gudangide.submission4.networks.Constants;
 import com.gudangide.submission4.viewmodels.TvViewModel;
 import com.synnapps.carouselview.CarouselView;
+
+import static com.gudangide.submission4.fragments.SearchFragment.QUERY_SEARCH;
+import static com.gudangide.submission4.fragments.SearchFragment.SEARCH_TYPE;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -193,6 +197,17 @@ public class TvFragment extends Fragment {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+                Bundle bundle = new Bundle();
+                bundle.putString(SEARCH_TYPE, "tv");
+                bundle.putString(QUERY_SEARCH, query);
+
+                SearchFragment fragment = new SearchFragment();
+                fragment.setArguments(bundle);
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.add(R.id.fl_main, fragment, "tag");
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+
                 return false;
             }
 

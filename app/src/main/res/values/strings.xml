@@ -3,7 +3,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="change_language">Pengaturan Bahasa</string>
-    <string name="faq">FAQ</string>
+    <string name="setting">Pengaturan</string>
     <string name="tdc">Syarat Dan Ketentuan</string>
     <string name="call_me">Hubungi Kami</string>
     <string name="user_name">Pengguna</string>
@@ -23,9 +23,15 @@
     <string name="error_network">Kegagalan jaringan, Silakan coba lagi nanti</string>
     <string name="toast">Akan Datang</string>
     <string name="search">Cari</string>
+    <string name="appwidget_text">Poster film favorit</string>
+    <string name="empty_text">TIDAK ADA DATA</string>
     <string name="search_hint_movie">Masukan judul film</string>
     <string name="search_hint_tv">Masukan judul acara TV</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="release_reminder">Pengingat film baru</string>
+    <string name="movie_not_found">Tidak ditemukan film dengan kata kunci \"%1$s\"</string>
+    <string name="tv_not_found">Tidak ditemukan acara TV dengan kata kunci \"%1$s\"</string>
+    <string name="release_reminder_message">Pengingat untuk menunjukkan film yang dirilis hari ini.</string>
+    <string name="daily_reminder">Pengingat harian</string>
+    <string name="daily_reminder_message">Pengingat untuk kembali ke aplikasi.</string>
+    <string name="daily_reminder_notification">Hallo Selamat Pagi, Ada banayak film untuk dilihat hari ini.</string>
 </resources>

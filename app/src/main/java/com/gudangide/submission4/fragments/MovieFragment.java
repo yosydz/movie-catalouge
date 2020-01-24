@@ -197,7 +197,7 @@ public class MovieFragment extends Fragment {
                 SearchFragment fragment = new SearchFragment();
                 fragment.setArguments(bundle);
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fl_main, fragment, "tag");
+                fragmentTransaction.add(R.id.fl_main, fragment, "tag");
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
 

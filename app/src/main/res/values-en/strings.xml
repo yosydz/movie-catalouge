@@ -4,7 +4,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="change_language">Language Setting</string>
-    <string name="faq">FAQ</string>
+    <string name="setting">Setting</string>
     <string name="tdc">Terms and Conditions</string>
     <string name="call_me">Contact us</string>
     <string name="user_name">User</string>
@@ -23,7 +23,9 @@
     <string name="error_server_broken">500 Server Broken</string>
     <string name="error_network">Network failure, Please try again later</string>
     <string name="toast">Coming Soon</string>
-    <string name="tab_text_1">Movie</string>
-    <string name="tab_text_2">Tv</string>
+    <string name="release_reminder_message">Reminder showing the movie that released today.</string>
+    <string name="daily_reminder">Daily Reminder</string>
+    <string name="daily_reminder_message">Reminder for return to app.</string>
+    <string name="daily_reminder_notification">Hello Good Morning, there are lots of films to watch today.</string>
 
 </resources>

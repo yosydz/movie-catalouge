@@ -76,9 +76,17 @@ public interface ApiService {
     );
 
     @GET("search/tv")
-    Call<ResponseMovie> getSearchTv(
+    Call<ResponseTv> getSearchTv(
             @Query("api_key") String apiKey,
             @Query("language") String language,
             @Query("query") String query
+    );
+
+    @GET("discover/movie")
+    Call<ResponseMovie> getReleaseMovie(
+            @Query("api_key") String apiKey,
+            @Query("primary_release_date.gte") String releaseGte,
+            @Query("primary_release_date.lte") String releaseLte
+
     );
 }

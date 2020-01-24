@@ -1,7 +1,9 @@
 package com.gudangide.submission4.fragments;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.database.ContentObserver;
 import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,6 +14,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +28,7 @@ import com.github.ybq.android.spinkit.style.WanderingCubes;
 import com.gudangide.submission4.DetailActivity;
 import com.gudangide.submission4.R;
 import com.gudangide.submission4.adapters.FavoriteMovieAdapter;
+import com.gudangide.submission4.db.DatabaseContract;
 import com.gudangide.submission4.db.FavoriteHelper;
 import com.gudangide.submission4.helper.MappingHelper;
 import com.gudangide.submission4.models.Favorite;
@@ -73,10 +79,9 @@ public class FavoriteMovieFragment extends Fragment implements LoadFavoritCallba
         favoriteHelper = new FavoriteHelper(getContext(), TABLE_MOVIE_NAME);
         favoriteHelper.open();
 
-        if (savedInstanceState == null) {
-            new LoadFavoriteMovie(favoriteHelper, this).execute();
-        } else {
+        if (savedInstanceState != null) {
             ArrayList<Favorite> listMovie = savedInstanceState.getParcelableArrayList(EXTRA_MOVIE);
+            favoriteArrayList = listMovie;
             if (listMovie != null) {
                 progressBar.setVisibility(View.GONE);
                 favoriteAdapter = new FavoriteMovieAdapter(listMovie, getContext());
@@ -87,7 +92,15 @@ public class FavoriteMovieFragment extends Fragment implements LoadFavoritCallba
                 });
                 rvFavMovie.setAdapter(favoriteAdapter);
             }
+        }else {
+            new LoadFavoriteMovie(getContext(), this).execute();
         }
+
+        HandlerThread handlerThread = new HandlerThread("DataObserver");
+        handlerThread.start();
+        Handler handler = new Handler(handlerThread.getLooper());
+        DataObserver myObserver = new DataObserver(handler, getContext());
+        getActivity().getContentResolver().registerContentObserver(DatabaseContract.FavoriteColumns.CONTENT_URI, true, myObserver);
 
     }
 
@@ -122,11 +135,11 @@ public class FavoriteMovieFragment extends Fragment implements LoadFavoritCallba
 
     private static class LoadFavoriteMovie extends AsyncTask<Void, Void, ArrayList<Favorite>>{
 
-        private final WeakReference<FavoriteHelper> weakFavorite;
+        private final WeakReference<Context> weakContext;
         private final WeakReference<LoadFavoritCallback> weakCallback;
 
-        public LoadFavoriteMovie(FavoriteHelper favoriteHelper, LoadFavoritCallback callback) {
-            weakFavorite = new WeakReference<>(favoriteHelper);
+        public LoadFavoriteMovie(Context context, LoadFavoritCallback callback) {
+            weakContext = new WeakReference<>(context);
             weakCallback = new WeakReference<>(callback);
         }
 
@@ -138,8 +151,9 @@ public class FavoriteMovieFragment extends Fragment implements LoadFavoritCallba
 
         @Override
         protected ArrayList<Favorite> doInBackground(Void... voids) {
-            Cursor rawData = weakFavorite.get().queryAll();
-            return MappingHelper.mapCursorToArrayList(rawData);
+            Context context = weakContext.get();
+            Cursor dataCursor = context.getContentResolver().query(DatabaseContract.FavoriteColumns.CONTENT_URI, null, null, null, null);
+            return MappingHelper.mapCursorToArrayList(dataCursor);
         }
 
         @Override
@@ -150,11 +164,24 @@ public class FavoriteMovieFragment extends Fragment implements LoadFavoritCallba
 
     }
 
-//    @Override
-//    public void onDestroy() {
-//        super.onDestroy();
-//        favoriteHelper.close();
-//    }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        favoriteHelper.close();
+    }
+
+    public static class DataObserver extends ContentObserver {
+        final Context context;
+        public DataObserver(Handler handler, Context context) {
+            super(handler);
+            this.context = context;
+        }
+        @Override
+        public void onChange(boolean selfChange) {
+            super.onChange(selfChange);
+            new LoadFavoriteMovie(context, (LoadFavoritCallback) context).execute();
+        }
+    }
 }
 
 interface LoadFavoritCallback {
