@@ -25,13 +25,12 @@ import com.bumptech.glide.Glide;
 import com.devs.readmoreoption.ReadMoreOption;
 import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.WanderingCubes;
-import com.google.gson.JsonArray;
 import com.gudangide.submission4.adapters.RecomMovieAdapter;
 import com.gudangide.submission4.db.FavoriteHelper;
 import com.gudangide.submission4.models.pojo.Genre;
 import com.gudangide.submission4.models.pojo.Recomendation;
-import com.gudangide.submission4.networks.ApiService;
-import com.gudangide.submission4.networks.Constants;
+import com.gudangide.submission4.network.ApiService;
+import com.gudangide.submission4.network.Constants;
 import com.gudangide.submission4.viewmodels.DetailViewModel;
 
 import org.json.JSONArray;

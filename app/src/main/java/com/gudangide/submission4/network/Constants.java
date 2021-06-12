@@ -1,4 +1,4 @@
-package com.gudangide.submission4.networks;
+package com.gudangide.submission4.network;
 
 public class Constants {
     public static final String BASE_URL = "https://api.themoviedb.org/3/";

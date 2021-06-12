@@ -5,6 +5,11 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,20 +17,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ProgressBar;
-import android.widget.Toast;
-
 import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.WanderingCubes;
 import com.gudangide.submission4.DetailActivity;
 import com.gudangide.submission4.R;
-import com.gudangide.submission4.adapters.FavoriteMovieAdapter;
 import com.gudangide.submission4.adapters.FavoriteTvAdapter;
 import com.gudangide.submission4.db.FavoriteHelper;
-import com.gudangide.submission4.helper.MappingHelper;
+import com.gudangide.submission4.helpers.MappingHelper;
 import com.gudangide.submission4.models.Favorite;
 
 import java.lang.ref.WeakReference;

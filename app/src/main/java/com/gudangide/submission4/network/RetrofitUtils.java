@@ -1,4 +1,4 @@
-package com.gudangide.submission4.networks;
+package com.gudangide.submission4.network;
 
 import android.app.Application;
 

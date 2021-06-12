@@ -11,9 +11,9 @@ import com.gudangide.submission4.models.ResponseGenre;
 import com.gudangide.submission4.models.ResponseTv;
 import com.gudangide.submission4.models.pojo.Genre;
 import com.gudangide.submission4.models.pojo.TvShow;
-import com.gudangide.submission4.networks.ApiService;
-import com.gudangide.submission4.networks.Constants;
-import com.gudangide.submission4.networks.RetrofitUtils;
+import com.gudangide.submission4.network.ApiService;
+import com.gudangide.submission4.network.Constants;
+import com.gudangide.submission4.network.RetrofitUtils;
 
 import java.util.ArrayList;
 import java.util.List;

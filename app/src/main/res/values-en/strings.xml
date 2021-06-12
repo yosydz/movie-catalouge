@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Submission4 </string>
+    <string name="app_name">Movie Catalogue</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="change_language">Language Setting</string>
@@ -23,6 +23,14 @@
     <string name="error_server_broken">500 Server Broken</string>
     <string name="error_network">Network failure, Please try again later</string>
     <string name="toast">Coming Soon</string>
+    <string name="search">Cari</string>
+    <string name="appwidget_text">Favorite movie poster</string>
+    <string name="empty_text">NOT FOUND</string>
+    <string name="search_hint_movie">Looking for something movie ?</string>
+    <string name="search_hint_tv">Looking for something tv show ?</string>
+    <string name="release_reminder">New movie reminder</string>
+    <string name="movie_not_found">There were no films with keywords \"%1$s\"</string>
+    <string name="tv_not_found">There were no TV Show with keywords \"%1$s\"</string>
     <string name="release_reminder_message">Reminder showing the movie that released today.</string>
     <string name="daily_reminder">Daily Reminder</string>
     <string name="daily_reminder_message">Reminder for return to app.</string>

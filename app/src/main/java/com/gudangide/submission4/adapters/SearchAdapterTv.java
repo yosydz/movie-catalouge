@@ -12,9 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.gudangide.submission4.R;
-import com.gudangide.submission4.models.pojo.Movie;
 import com.gudangide.submission4.models.pojo.TvShow;
-import com.gudangide.submission4.networks.Constants;
+import com.gudangide.submission4.network.Constants;
 
 import java.util.List;
 

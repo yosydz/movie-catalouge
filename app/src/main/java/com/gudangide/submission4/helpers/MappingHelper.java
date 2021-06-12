@@ -1,16 +1,15 @@
-package com.gudangide.submission4.helper;
+package com.gudangide.submission4.helpers;
 
 import android.database.Cursor;
 
-import com.gudangide.submission4.db.DatabaseContract;
 import com.gudangide.submission4.models.Favorite;
 
 import java.util.ArrayList;
 
+import static com.gudangide.submission4.db.DatabaseContract.FavoriteColumns.GENRE;
 import static com.gudangide.submission4.db.DatabaseContract.FavoriteColumns.ID;
 import static com.gudangide.submission4.db.DatabaseContract.FavoriteColumns.POSTER;
 import static com.gudangide.submission4.db.DatabaseContract.FavoriteColumns.RATING;
-import static com.gudangide.submission4.db.DatabaseContract.FavoriteColumns.GENRE;
 import static com.gudangide.submission4.db.DatabaseContract.FavoriteColumns.TITLE;
 
 public class MappingHelper {

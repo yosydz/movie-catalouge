@@ -1,8 +1,6 @@
 package com.gudangide.submission4.fragments;
 
 
-import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,7 +13,6 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,7 +20,6 @@ import androidx.appcompat.widget.SearchView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -37,7 +33,7 @@ import com.gudangide.submission4.R;
 import com.gudangide.submission4.adapters.MovieAdapter;
 import com.gudangide.submission4.adapters.PopularMovieAdapter;
 import com.gudangide.submission4.models.pojo.Movie;
-import com.gudangide.submission4.networks.Constants;
+import com.gudangide.submission4.network.Constants;
 import com.gudangide.submission4.viewmodels.MovieViewModel;
 import com.synnapps.carouselview.CarouselView;
 
@@ -49,16 +45,16 @@ import static com.gudangide.submission4.fragments.SearchFragment.SEARCH_TYPE;
  */
 public class MovieFragment extends Fragment {
 
-    private RecyclerView rViewMovie;
-    private RecyclerView rViewMoviePopular;
-    private ProgressBar progressBar;
-    private CarouselView carouselView;
-    private ScrollView scrollView;
+    private RecyclerView   rViewMovie;
+    private RecyclerView   rViewMoviePopular;
+    private ProgressBar    progressBar;
+    private CarouselView   carouselView;
+    private ScrollView     scrollView;
     private MovieViewModel viewModel;
 
     private ConstraintLayout errorLayout;
-    private TextView tvError;
-    private ImageButton refresh;
+    private TextView         tvError;
+    private ImageButton      refresh;
 
 
     public MovieFragment() {

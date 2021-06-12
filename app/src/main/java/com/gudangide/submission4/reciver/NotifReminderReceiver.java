@@ -7,9 +7,9 @@ import android.content.Intent;
 import com.gudangide.submission4.R;
 import com.gudangide.submission4.models.ResponseMovie;
 import com.gudangide.submission4.models.pojo.Movie;
-import com.gudangide.submission4.networks.ApiService;
-import com.gudangide.submission4.networks.Constants;
-import com.gudangide.submission4.networks.RetrofitUtils;
+import com.gudangide.submission4.network.ApiService;
+import com.gudangide.submission4.network.Constants;
+import com.gudangide.submission4.network.RetrofitUtils;
 import com.gudangide.submission4.notifications.NotificationReminder;
 
 import java.text.SimpleDateFormat;

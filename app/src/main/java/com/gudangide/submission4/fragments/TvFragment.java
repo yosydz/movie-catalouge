@@ -33,12 +33,13 @@ import com.gudangide.submission4.R;
 import com.gudangide.submission4.adapters.PopularTvAdapter;
 import com.gudangide.submission4.adapters.TvAdapter;
 import com.gudangide.submission4.models.pojo.TvShow;
-import com.gudangide.submission4.networks.Constants;
+import com.gudangide.submission4.network.Constants;
 import com.gudangide.submission4.viewmodels.TvViewModel;
 import com.synnapps.carouselview.CarouselView;
 
 import static com.gudangide.submission4.fragments.SearchFragment.QUERY_SEARCH;
 import static com.gudangide.submission4.fragments.SearchFragment.SEARCH_TYPE;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -48,13 +49,13 @@ public class TvFragment extends Fragment {
     private RecyclerView rViewTv;
     private RecyclerView rViewTvPopular;
     private CarouselView carouselView;
-    private ProgressBar progressBar;
-    private ScrollView scrollView;
+    private ProgressBar  progressBar;
+    private ScrollView  scrollView;
     private TvViewModel viewModel;
 
     private ConstraintLayout errorLayout;
-    private TextView tvError;
-    private ImageButton refresh;
+    private TextView         tvError;
+    private ImageButton      refresh;
 
     public TvFragment() {
         // Required empty public constructor

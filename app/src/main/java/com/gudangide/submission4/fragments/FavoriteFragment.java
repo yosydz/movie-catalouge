@@ -2,17 +2,14 @@ package com.gudangide.submission4.fragments;
 
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
-
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.google.android.material.tabs.TabLayout;
 import com.gudangide.submission4.R;
@@ -24,11 +21,9 @@ import com.gudangide.submission4.adapters.FavoritePagerAdapter;
  */
 public class FavoriteFragment extends Fragment {
 
-
     public FavoriteFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,5 +40,7 @@ public class FavoriteFragment extends Fragment {
         viewPager.setAdapter(favoritePagerAdapter);
         TabLayout tabLayout = view.findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+
+
     }
 }

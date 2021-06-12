@@ -12,9 +12,9 @@ import com.gudangide.submission4.models.pojo.Genre;
 import com.gudangide.submission4.models.pojo.MovieDetail;
 import com.gudangide.submission4.models.pojo.Recomendation;
 import com.gudangide.submission4.models.pojo.TvDetail;
-import com.gudangide.submission4.networks.ApiService;
-import com.gudangide.submission4.networks.Constants;
-import com.gudangide.submission4.networks.RetrofitUtils;
+import com.gudangide.submission4.network.ApiService;
+import com.gudangide.submission4.network.Constants;
+import com.gudangide.submission4.network.RetrofitUtils;
 
 import java.util.ArrayList;
 import java.util.List;

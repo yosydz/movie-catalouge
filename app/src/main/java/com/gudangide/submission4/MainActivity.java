@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragment = new MovieFragment();
             loadFragment(fragment);
         }
-//        toolbar.setTitle(getResources().getString(R.string.title_movie));
         setSupportActionBar(toolbar);
         DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -124,12 +123,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_contactus:
+            case R.id.nav_tac:
+                showToast();
+                break;
             case R.id.nav_faq:
                 Intent setting = new Intent(this, SettingActivity.class);
                 startActivity(setting);
-                break;
-            case R.id.nav_tac:
-                showToast();
                 break;
 
             case R.id.nav_bahasa:

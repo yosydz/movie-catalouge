@@ -10,9 +10,9 @@ import com.gudangide.submission4.models.ResponseGenre;
 import com.gudangide.submission4.models.ResponseMovie;
 import com.gudangide.submission4.models.pojo.Genre;
 import com.gudangide.submission4.models.pojo.Movie;
-import com.gudangide.submission4.networks.ApiService;
-import com.gudangide.submission4.networks.Constants;
-import com.gudangide.submission4.networks.RetrofitUtils;
+import com.gudangide.submission4.network.ApiService;
+import com.gudangide.submission4.network.Constants;
+import com.gudangide.submission4.network.RetrofitUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,7 +63,7 @@ public class MovieViewModel extends ViewModel {
             @Override
             public void onResponse(Call<ResponseMovie> call, Response<ResponseMovie> response) {
                 statusCode = response.code();
-                if (response.isSuccessful()) {
+                if(response.isSuccessful()) {
                     movies = response.body().getResults();
                     movieList = new ArrayList<>();
 
@@ -71,7 +71,6 @@ public class MovieViewModel extends ViewModel {
                         list = new ArrayList<>();
                         for (Integer value : movie.getGenreIds()) {
                             for (Genre dataGenre : genres) {
-
                                 if (value.equals(dataGenre.getId())) {
                                     list.add(dataGenre.getName());
                                 }
@@ -137,7 +136,6 @@ public class MovieViewModel extends ViewModel {
 
                 } else {
                     Log.e(TAG, "Error Code : " + response.code());
-                    return;
                 }
             }
 

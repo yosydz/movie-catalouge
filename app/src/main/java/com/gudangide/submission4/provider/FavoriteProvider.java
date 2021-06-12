@@ -2,13 +2,11 @@ package com.gudangide.submission4.provider;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;
-import android.content.UriMatcher;
 import android.database.Cursor;
 import android.net.Uri;
 
 import com.gudangide.submission4.db.FavoriteHelper;
 
-import static com.gudangide.submission4.db.DatabaseContract.AUTHORITY;
 import static com.gudangide.submission4.db.DatabaseContract.TABLE_MOVIE_NAME;
 
 public class FavoriteProvider extends ContentProvider {
@@ -39,7 +37,7 @@ public class FavoriteProvider extends ContentProvider {
 
     @Override
     public boolean onCreate() {
-        favoriteHelper = favoriteHelper.getInstance(getContext());
+        favoriteHelper = FavoriteHelper.getInstance(getContext());
         favoriteHelper = new FavoriteHelper(getContext(), TABLE_MOVIE_NAME);
         favoriteHelper.open();
         return true;

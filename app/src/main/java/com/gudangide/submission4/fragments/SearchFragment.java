@@ -31,9 +31,9 @@ import com.gudangide.submission4.models.ResponseTv;
 import com.gudangide.submission4.models.pojo.Genre;
 import com.gudangide.submission4.models.pojo.Movie;
 import com.gudangide.submission4.models.pojo.TvShow;
-import com.gudangide.submission4.networks.ApiService;
-import com.gudangide.submission4.networks.Constants;
-import com.gudangide.submission4.networks.RetrofitUtils;
+import com.gudangide.submission4.network.ApiService;
+import com.gudangide.submission4.network.Constants;
+import com.gudangide.submission4.network.RetrofitUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +56,6 @@ public class SearchFragment extends Fragment {
     public static String QUERY_SEARCH;
     private TextView tvError;
     private ImageButton refresh;
-//    private SearchViewModel searchViewModel;
 
     private List<String> list;
     private List<Movie> movies;
@@ -95,7 +94,6 @@ public class SearchFragment extends Fragment {
         refresh = view.findViewById(R.id.refresh);
         showLoading(true);
 
-//        searchViewModel = new ViewModelProvider(getActivity(), new ViewModelProvider.NewInstanceFactory()).get(SearchViewModel.class);
         Bundle bundle = this.getArguments();
         String type = bundle.getString(SEARCH_TYPE);
         if (type.equals("movie")) {

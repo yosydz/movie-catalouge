@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Submission4</string>
+    <string name="app_name">Movie Catalogue</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="change_language">Pengaturan Bahasa</string>
@@ -25,8 +25,8 @@
     <string name="search">Cari</string>
     <string name="appwidget_text">Poster film favorit</string>
     <string name="empty_text">TIDAK ADA DATA</string>
-    <string name="search_hint_movie">Masukan judul film</string>
-    <string name="search_hint_tv">Masukan judul acara TV</string>
+    <string name="search_hint_movie">Mencari suatu film ?</string>
+    <string name="search_hint_tv">Mencari suatu acara tv ?</string>
     <string name="release_reminder">Pengingat film baru</string>
     <string name="movie_not_found">Tidak ditemukan film dengan kata kunci \"%1$s\"</string>
     <string name="tv_not_found">Tidak ditemukan acara TV dengan kata kunci \"%1$s\"</string>
